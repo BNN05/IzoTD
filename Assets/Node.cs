@@ -19,4 +19,12 @@ public class Node : MonoBehaviour
     {
         renderer.material.color = startColor;
     }
+    private void OnMouseDown()
+    {
+        if (Shop.instance.turretSelected == null) { Debug.Log("No turret"); return; }
+        if(Shop.instance.turretSelected==1)
+        {
+
+        }
+    }
 }

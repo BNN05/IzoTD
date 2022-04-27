@@ -6,7 +6,7 @@ public class Shop : MonoBehaviour
 {
 
     public static Shop instance;
-    GameObject turretSelected;
+    public int turretSelected;
 
     void Awake()
     {
@@ -18,8 +18,8 @@ public class Shop : MonoBehaviour
         instance = this;
     }
 
-    public void selectStandard()
+    public void selectTurret(int id)
     {
-        
+        turretSelected = id;
     }
 }

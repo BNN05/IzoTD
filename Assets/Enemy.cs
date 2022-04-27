@@ -27,7 +27,7 @@ public class Enemy : MonoBehaviour
 
     void Die()
     {
-        //PlayerStats.Money += worth;
+        PlayerStats.Money += worth;
         Destroy(gameObject);
     }
     void Update()

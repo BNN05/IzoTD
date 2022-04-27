@@ -10,24 +10,22 @@ public class WaveSpawner : MonoBehaviour
     public float timeBetweenWaves = 5f;
     private float countdown = 5f;
     private int waveIndex = 0;
-    public int difficulty;
-    public static int enemyCount = 0;
 
     void Update()
     {
-        if (countdown <= 0f && enemyCount == 0)
+        if (countdown <= 0f)
         {
             StartCoroutine(SpawnWave());
             countdown = timeBetweenWaves;
         }
-        if (countdown > 0 && enemyCount == 0)
+        if (countdown > 0)
         {
             countdown -= Time.deltaTime;
         }
     }
     public void killEnemy()
     {
-        enemyCount--;
+        Debug.Log("add money");
     }
     IEnumerator SpawnWave()
     {
@@ -48,6 +46,5 @@ public class WaveSpawner : MonoBehaviour
     void SpawnEnemy()
     {
         Instantiate(enemyPrefab, spawnPoint.position, spawnPoint.rotation);
-        enemyCount++;
     }
 }

@@ -24,7 +24,7 @@ public class Node : MonoBehaviour
     private void OnMouseDown()
     {
         if (Shop.instance.turretSelected == 0) { Debug.Log("No turret"); return; }
-        if (Shop.instance.turretSelected == 1 && this.turret == null)
+        if (Shop.instance.turretSelected == 1 && this.turret == null && PlayerStats.Money>349)
         {
              turret = (GameObject)Instantiate(towerPrefab, transform.position, Quaternion.identity);
             PlayerStats.Money -= 350;

@@ -2,13 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
+using System;
+using UnityEngine.UIElements;
 
 public class UiController : MonoBehaviour
 {
     public Text lives;
-    public Text money;
+    public TMP_Text money;
+    public GameObject GameOverPanel;
     string livesnb = "";
     int StartLives = PlayerStats.startLives;
+    public GameObject ShopPanel;
+    public GameObject TrashPanel;
     private void Start()
     {
         for (int i = 0; i < PlayerStats.startLives;i++)
@@ -26,5 +32,14 @@ public class UiController : MonoBehaviour
         }
         lives.text = livesnb;
         money.text = PlayerStats.Money.ToString() + " $";
+        if(PlayerStats.Lives <1) setGameOverPanel();
+    }
+    public  void setGameOverPanel()
+    {
+        GameOverPanel.SetActive(true);
+        TrashPanel.SetActive(false);
+        ShopPanel.SetActive(false);
+        money.text = "";
+        lives.text = "";
     }
 }

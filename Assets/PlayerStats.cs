@@ -9,6 +9,7 @@ public class PlayerStats : MonoBehaviour
 	public static int Lives;
 	public static int startLives = 5;
 	public static int Rounds;
+	
 
 	void Start()
 	{
@@ -17,4 +18,13 @@ public class PlayerStats : MonoBehaviour
 
 		Rounds = 0;
 	}
+
+    private void Update()
+    {
+        if(Lives < 1)
+        {
+			
+			Time.timeScale = 0;
+        }
+    }
 }

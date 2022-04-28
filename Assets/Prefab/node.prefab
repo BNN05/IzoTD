@@ -108,5 +108,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9dc14161259698a41aba516feca25b70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerPrefab: {fileID: 6759954076637054001, guid: 7f685eb772b1cf348b1fcf9ff38665a0, type: 3}
   startColor: {r: 0.7372549, g: 0.70980394, b: 0.15686275, a: 0}
   mouseColor: {r: 0.41509432, g: 0.41509432, b: 0.15820575, a: 0}

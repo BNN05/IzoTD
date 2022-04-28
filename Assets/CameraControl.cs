@@ -11,6 +11,6 @@ public class CameraControl : MonoBehaviour
         float xAxisValue = Input.GetAxis("Horizontal") * Speed;
         float zAxisValue = Input.GetAxis("Vertical") * Speed;
 
-        transform.position = new Vector3(transform.position.x + xAxisValue, transform.position.y, transform.position.z + zAxisValue);
+        transform.position = new Vector3(transform.position.x + xAxisValue +zAxisValue, transform.position.y, transform.position.z + zAxisValue - xAxisValue);
     }
 }

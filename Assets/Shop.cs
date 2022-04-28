@@ -6,7 +6,7 @@ public class Shop : MonoBehaviour
 {
 
     public static Shop instance;
-    public int turretSelected;
+    public int turretSelected = 0;
 
     void Awake()
     {
@@ -18,8 +18,18 @@ public class Shop : MonoBehaviour
         instance = this;
     }
 
+    private void Update()
+    {
+        if (Input.GetMouseButtonDown(1)) turretSelected=0;
+    }
+
     public void selectTurret(int id)
     {
         turretSelected = id;
+    }
+
+    public void sellTurret()
+    {
+        turretSelected = 666;
     }
 }

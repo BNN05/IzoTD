@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class Node : MonoBehaviour
 {
+    public GameObject towerPrefab;
     public Color startColor;
     public Color mouseColor;
+    GameObject turret;
     Renderer renderer;
     void Start()
     {
@@ -21,10 +23,18 @@ public class Node : MonoBehaviour
     }
     private void OnMouseDown()
     {
-        if (Shop.instance.turretSelected == null) { Debug.Log("No turret"); return; }
-        if(Shop.instance.turretSelected==1)
+        if (Shop.instance.turretSelected == 0) { Debug.Log("No turret"); return; }
+        if (Shop.instance.turretSelected == 1 && this.turret == null)
         {
+             turret = (GameObject)Instantiate(towerPrefab, transform.position, Quaternion.identity);
+            PlayerStats.Money -= 350;
+            Shop.instance.turretSelected = 0;
+        }
 
+        if (Shop.instance.turretSelected == 666 && this.turret != null)
+        {
+             Destroy(turret);
+            Shop.instance.turretSelected = 0;
         }
     }
 }
